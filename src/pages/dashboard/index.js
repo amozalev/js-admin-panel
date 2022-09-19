@@ -32,8 +32,6 @@ export default class Page {
     this.addRangePickerElement(from, to);
     this.addChartElements(from, to);
     this.addTableElement();
-
-    console.log('==this.subElements', this.subElements)
   }
 
   addRangePickerElement(from, to) {
