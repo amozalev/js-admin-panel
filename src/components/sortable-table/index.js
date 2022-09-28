@@ -106,8 +106,6 @@ export default class SortableTable {
   }
 
   sortOnClient(fieldValue, orderValue) {
-    console.log('==', fieldValue, orderValue)
-
     const ORDER = {
       'asc': 1,
       'desc': -1
