@@ -26,7 +26,7 @@ export default class ProductForm {
     this.save(e);
   };
 
-  openFileUploadDialogHandler = (e) => {
+  openFileUploadDialogHandler = () => {
     this.subElements.fileInput.click();
   };
 
@@ -38,8 +38,8 @@ export default class ProductForm {
     this.element.dispatchEvent(event);
   }
 
-  uploadImageHandler = async (e) => {
-    const file = this.subElements.fileInput.files[0];
+  uploadImageHandler = async () => {
+    const [file] = this.subElements.fileInput.files;
     if (!file) {
       return;
     }
@@ -111,7 +111,6 @@ export default class ProductForm {
 
   parseFormData(formData) {
     const formDataObj = Object.fromEntries(formData.entries());
-    console.log(formDataObj);
 
     return {
       description: formDataObj.description,
@@ -125,7 +124,7 @@ export default class ProductForm {
     };
   }
 
-  save = async (event) => {
+  save = async () => {
     const formData = new FormData(this.subElements.productForm);
     const parsedFormData = this.parseFormData(formData);
 
